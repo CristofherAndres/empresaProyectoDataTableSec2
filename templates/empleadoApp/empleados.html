@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista de empleados</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if empleados %}
+            {% for emp in empleados %}
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.nombre}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.telefono}}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <td>No hay empleados en la DB</td>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+
+</html>
