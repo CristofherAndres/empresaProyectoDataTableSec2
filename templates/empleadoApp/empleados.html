@@ -17,6 +17,8 @@
     </div>
 
 
+    <a href="{% url 'crearEmpleado' %}" class="btn btn-primary">Crear empleado</a>
+
     <table id="example" class="table table-striped">
         <thead>
             <tr>
@@ -27,7 +29,6 @@
             </tr>
         </thead>
         <tbody>
-            {% if empleados %}
             {% for emp in empleados %}
             <tr>
                 <td>{{emp.id}}</td>
@@ -36,9 +37,6 @@
                 <td>{{emp.telefono}}</td>
             </tr>
             {% endfor %}
-            {% else %}
-            <td>No hay empleados en la DB</td>
-            {% endif %}
         </tbody>
     </table>
 
