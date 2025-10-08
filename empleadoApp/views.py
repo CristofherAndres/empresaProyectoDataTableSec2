@@ -22,7 +22,11 @@ def crearEmpleado(request):
             form.save()
             return HttpResponseRedirect(reverse('empleadoData'))
 
-    data = {'form' : form}
+    data = {'form' : form,
+            'titulo' : 'Agregar empleado',
+            'color' : 'alert-success',
+            'txtBtn' : 'Agregar Empleado'
+            }
     return render(request, 'empleadoApp/empleadoRegistro.html', data)
 
 
@@ -36,7 +40,11 @@ def editarEmpleado(request, id):
             form.save()
             return HttpResponseRedirect(reverse('empleadoData'))
 
-    data = {'form' : form}
+    data = {'form' : form,
+            'titulo' : 'Editar empleado',
+            'color' : 'alert-warning',
+            'txtBtn' : 'Guardar cambios'
+            }
     return render(request, 'empleadoApp/empleadoRegistro.html', data)
 
 def eliminarEmpleado(request, id):
